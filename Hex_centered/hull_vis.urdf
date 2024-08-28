@@ -1,0 +1,913 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Hex_centered">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="8.4655E-16 -2.7749E-05 -0.0017166" rpy="0 0 0" />
+      <mass value="1.1131" />
+      <inertia ixx="0.0015545" ixy="5.2756E-19" ixz="-5.9226E-22" iyy="0.0015449" iyz="2.5998E-19" izz="0.0029493" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="base_link_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="base_link_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="leg0_sec0">
+    <inertial>
+      <origin xyz="-0.00707569385529468 0.00855062625804036 -0.054815748898491" rpy="0 0 0" />
+      <mass value="0.516744336009406" />
+      <inertia ixx="0.000332035445912826" ixy="-1.19422290500033E-08" ixz="-4.70411717105616E-06" iyy="0.000381762150648277" iyz="2.26631086123267E-05" izz="0.000277923623107278" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg0_sec0_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg0_sec0_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_leg0_sec0" type="revolute">
+    <origin xyz="0.0883345911860111 0.0510000000000006 -0.00299999999999999" rpy="-1.5707963267949 0 2.09951777344053" />
+    <parent link="base_link" />
+    <child link="leg0_sec0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg0_sec1">
+    <inertial>
+      <origin xyz="-3.47960722002806E-05 0.00296670012037184 -0.0658939676969916" rpy="0 0 0" />
+      <mass value="0.0550811829575692" />
+      <inertia ixx="2.28144165037125E-05" ixy="5.51953299782515E-10" ixz="4.60445429205642E-10" iyy="4.57864500280882E-05" iyz="-1.00902241603427E-08" izz="2.37510646239458E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg0_sec1_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg0_sec1_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg0_sec0_leg0_sec1" type="revolute">
+    <origin xyz="0.014 -0.0025 -0.083" rpy="0 0.045641 1.5708" />
+    <parent link="leg0_sec0" />
+    <child link="leg0_sec1" />
+    <axis xyz="-2.1688E-05 1 0.00047485" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg0_sec2">
+    <inertial>
+      <origin xyz="0.00597993712436784 -0.019828072955937 0.00171878033778611" rpy="0 0 0" />
+      <mass value="0.30128216441748" />
+      <inertia ixx="0.0012875062335798" ixy="4.31058103013784E-07" ixz="0.000297696378153032" iyy="0.00126928197346853" iyz="3.09103455282562E-07" izz="0.000361201639787854" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg0_sec2_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg0_sec2_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg0_sec1_leg0_sec2" type="revolute">
+    <origin xyz="0 -0.0075 -0.118" rpy="0 -1.302 3.1416" />
+    <parent link="leg0_sec1" />
+    <child link="leg0_sec2" />
+    <axis xyz="0.00046356 1 0.00010519" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg0_end">
+    <inertial>
+      <origin xyz="-0.00438256224777916 -0.00839772550913839 0.000260732623376798" rpy="0 0 0" />
+      <mass value="0.000523598775598299" />
+      <inertia ixx="5.23598775598299E-09" ixy="-2.22951024477183E-25" ixz="-2.58493941422821E-26" iyy="5.23598775598298E-09" iyz="-5.16987882845642E-26" izz="5.23598775598299E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg0_end_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg0_end_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg0_sec2_leg0_end" type="fixed">
+    <origin xyz="-0.030129 -0.021437 0.1463" rpy="-1.5398 0.11597 -2.657" />
+    <parent link="leg0_sec2" />
+    <child link="leg0_end" />
+    <axis xyz="0 0 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg1_sec0">
+    <inertial>
+      <origin xyz="-0.00710445304603185 0.00855022953898073 -0.0548148925372757" rpy="0 0 0" />
+      <mass value="0.51674419533482" />
+      <inertia ixx="0.000332030534681885" ixy="1.09687117943672E-08" ixz="-4.75157743858336E-06" iyy="0.000381752459194266" iyz="2.2678027424401E-05" izz="0.000277938234495214" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg1_sec0_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg1_sec0_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_leg1_sec0" type="revolute">
+    <origin xyz="0 0.102 0" rpy="1.5707963267949 0 0.00401317579419335" />
+    <parent link="base_link" />
+    <child link="leg1_sec0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg1_sec1">
+    <inertial>
+      <origin xyz="1.48463732280169E-09 0.00298679638148967 -0.0658997495889599" rpy="0 0 0" />
+      <mass value="0.0550811690754703" />
+      <inertia ixx="2.28145160395789E-05" ixy="9.43216308911731E-13" ixz="-1.27595524711446E-10" iyy="4.57865354622549E-05" iyz="1.45702317896288E-09" izz="2.37510484303137E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg1_sec1_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg1_sec1_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg1_sec0_leg1_sec1" type="revolute">
+    <origin xyz="-0.0139999999999956 -0.00249999999999998 -0.0830000000000002" rpy="0 0.0750140295306033 -1.5707963267949" />
+    <parent link="leg1_sec0" />
+    <child link="leg1_sec1" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg1_sec2">
+    <inertial>
+      <origin xyz="0.00447856820292183 0.0359301913587442 0.00431952813861851" rpy="0 0 0" />
+      <mass value="0.301282245465355" />
+      <inertia ixx="0.000839650699187153" ixy="-5.43340470613798E-07" ixz="0.000550363105349293" iyy="0.00126928650978786" iyz="-2.38816065708558E-07" izz="0.000809060253833485" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg1_sec2_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg1_sec2_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg1_sec1_leg1_sec2" type="revolute">
+    <origin xyz="0 -0.0240000000000046 -0.118" rpy="0 -0.791521153426387 0" />
+    <parent link="leg1_sec1" />
+    <child link="leg1_sec2" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg1_end">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.000523598775598299" />
+      <inertia ixx="5.23598775598299E-09" ixy="1.03397576569128E-25" ixz="0" iyy="5.23598775598299E-09" iyz="-1.29246970711411E-25" izz="5.23598775598299E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg1_end_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg1_end_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg1_sec2_leg1_end" type="fixed">
+    <origin xyz="0.124761507761288 0.036148286668602 -0.0984937610507115" rpy="0.969665570451577 0.803297229042856 2.41148618199875" />
+    <parent link="leg1_sec2" />
+    <child link="leg1_end" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="leg2_sec0">
+    <inertial>
+      <origin xyz="-0.00710445055153557 -0.0206811805150298 -0.054812028813218" rpy="0 0 0" />
+      <mass value="0.516744340904771" />
+      <inertia ixx="0.000332030498302113" ixy="-5.73639305002406E-11" ixz="-4.73249435846793E-06" iyy="0.000381762164339501" iyz="2.26631091945157E-05" izz="0.000277928582872897" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg2_sec0_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg2_sec0_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_leg2_sec0" type="revolute">
+    <origin xyz="-0.0883345911860131 0.0510000000000005 -0.0322318069086422" rpy="-1.5707963267949 0 -2.0887478298947" />
+    <parent link="base_link" />
+    <child link="leg2_sec0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg2_sec1">
+    <inertial>
+      <origin xyz="5.25503776604985E-09 -0.0109552250162961 -0.0658997561016724" rpy="0 0 0" />
+      <mass value="0.0550811835691165" />
+      <inertia ixx="2.28144162219905E-05" ixy="6.87387369928867E-13" ixz="-2.99949390540895E-11" iyy="4.57864548150819E-05" iyz="1.45667549934326E-09" izz="2.37510606270452E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg2_sec1_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg2_sec1_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg2_sec0_leg2_sec1" type="revolute">
+    <origin xyz="0 -0.0317318069086421 -0.0829999999999991" rpy="0 0.0461645170086927 1.5707963267949" />
+    <parent link="leg2_sec0" />
+    <child link="leg2_sec1" />
+    <axis xyz="0 0.999999998787039 4.920117719176E-05" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg2_sec2">
+    <inertial>
+      <origin xyz="0.00506647207805064 -0.00361212267776093 0.00156975734931639" rpy="0 0 0" />
+      <mass value="0.301282383105138" />
+      <inertia ixx="0.00100817381744662" ixy="-0.000518985545059815" ixz="3.35388953606806E-07" iyy="0.000640542280867976" iyz="-4.89721520029434E-07" izz="0.00126929100056078" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg2_sec2_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg2_sec2_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg2_sec1_leg2_sec2" type="revolute">
+    <origin xyz="0 0 -0.118" rpy="-1.57079632679491 -0.971924974977197 -3.14159265358978" />
+    <parent link="leg2_sec1" />
+    <child link="leg2_sec2" />
+    <axis xyz="-4.19200750312876E-05 2.58576780800823E-05 0.999999998787044" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg2_end">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.000523598775598299" />
+      <inertia ixx="5.23598775598299E-09" ixy="-9.04728794979874E-26" ixz="-2.06795153138257E-25" iyy="5.23598775598298E-09" iyz="1.03397576569128E-25" izz="5.23598775598299E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg2_end_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg2_end_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg2_sec2_leg2_end" type="fixed">
+    <origin xyz="-0.0759237273830959 -0.138069815645729 0.00153632213479866" rpy="3.11289588948014 0.483102881287211 2.68217676816751" />
+    <parent link="leg2_sec2" />
+    <child link="leg2_end" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="leg3_sec0">
+    <inertial>
+      <origin xyz="-0.00710445049796826 0.0085502314605868 -0.0548148830973804" rpy="0 0 0" />
+      <mass value="0.51674434334138" />
+      <inertia ixx="0.000332030497320948" ixy="1.09508607538054E-08" ixz="-4.75156132613358E-06" iyy="0.000381752452117392" iyz="2.2678016415106E-05" izz="0.000277938295233445" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg3_sec0_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg3_sec0_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_leg3_sec0" type="revolute">
+    <origin xyz="-0.0883345911860119 -0.0510000000000026 0" rpy="1.5707963267949 0 2.09840827818739" />
+    <parent link="base_link" />
+    <child link="leg3_sec0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg3_sec1">
+    <inertial>
+      <origin xyz="-1.86242390606828E-09 0.00298683029554875 -0.0658997383493555" rpy="0 0 0" />
+      <mass value="0.05508118510774" />
+      <inertia ixx="2.28144167847957E-05" ixy="1.15459821771112E-12" ixz="-2.95649396417999E-11" iyy="4.57864559080722E-05" iyz="1.45756403955783E-09" izz="2.37510611896855E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg3_sec1_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg3_sec1_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg3_sec0_leg3_sec1" type="revolute">
+    <origin xyz="-0.014 -0.00249999999999027 -0.082999999999997" rpy="0 0.0750140293482233 -1.5707963267949" />
+    <parent link="leg3_sec0" />
+    <child link="leg3_sec1" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg3_sec2">
+    <inertial>
+      <origin xyz="0.00447860530466054 0.0359301784982642 0.00431942794813184" rpy="0 0 0" />
+      <mass value="0.301282032345394" />
+      <inertia ixx="0.00083964691740419" ixy="-5.43655253747486E-07" ixz="0.000550362229373171" iyy="0.00126928091669943" iyz="-2.3820985063926E-07" izz="0.000809058576296916" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg3_sec2_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg3_sec2_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg3_sec1_leg3_sec2" type="revolute">
+    <origin xyz="0 -0.0240000000000002 -0.118000000000003" rpy="0 -0.79152115324401 0" />
+    <parent link="leg3_sec1" />
+    <child link="leg3_sec2" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg3_end">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.000523598775598299" />
+      <inertia ixx="5.23598775598299E-09" ixy="-2.26182198744969E-26" ixz="-3.87740912134232E-26" iyy="5.23598775598299E-09" iyz="-5.16987882845642E-26" izz="5.23598775598299E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg3_end_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg3_end_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg3_sec2_leg3_end" type="fixed">
+    <origin xyz="0.124761507746165 0.0361482866686022 -0.0984937610354024" rpy="0.969665570451575 0.803297229042854 2.41148618199875" />
+    <parent link="leg3_sec2" />
+    <child link="leg3_end" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="leg4_sec0">
+    <inertial>
+      <origin xyz="-0.00710445303505077 0.00855062450257226 -0.0548120381256653" rpy="0 0 0" />
+      <mass value="0.51674419539948" />
+      <inertia ixx="0.000332030534503116" ixy="-3.96325880872006E-11" ixz="-4.7325102588364E-06" iyy="0.000381762170173281" iyz="2.26631200821973E-05" izz="0.000277928522694961" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg4_sec0_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg4_sec0_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_leg4_sec0" type="revolute">
+    <origin xyz="0 -0.102 -0.003" rpy="-1.5708 0 0.0056473" />
+    <parent link="base_link" />
+    <child link="leg4_sec0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg4_sec1">
+    <inertial>
+      <origin xyz="1.55185030797922E-09 0.00304474105440002 -0.0658997504155771" rpy="0 0 0" />
+      <mass value="0.0550811667402721" />
+      <inertia ixx="2.28145150533023E-05" ixy="9.40225941500973E-13" ixz="-1.27680898175252E-10" iyy="4.5786533657584E-05" iyz="1.45699133116291E-09" izz="2.37510475440189E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg4_sec1_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg4_sec1_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg4_sec0_leg4_sec1" type="revolute">
+    <origin xyz="0.0139999999997467 -0.00249999999902129 -0.0830000000016922" rpy="0 0.0461645169152207 1.5707963267949" />
+    <parent link="leg4_sec0" />
+    <child link="leg4_sec1" />
+    <axis xyz="0 0.999999998787038 4.92011950652474E-05" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg4_sec2">
+    <inertial>
+      <origin xyz="0.00596287497487452 -0.0199302535089278 0.001777992879926" rpy="0 0 0" />
+      <mass value="0.301282726812204" />
+      <inertia ixx="0.00128751403890389" ixy="4.76738917873338E-07" ixz="0.000297700131008368" iyy="0.00126929778505946" iyz="3.53794352511474E-07" izz="0.00036120939589547" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg4_sec2_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg4_sec2_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg4_sec1_leg4_sec2" type="revolute">
+    <origin xyz="0 -0.00749999999938609 -0.118000000015958" rpy="0 -1.30148876312317 -3.14159265358977" />
+    <parent link="leg4_sec1" />
+    <child link="leg4_sec2" />
+    <axis xyz="-4.80324338419475E-05 0.999999998787043 -1.08995076120095E-05" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg4_end">
+    <inertial>
+      <origin xyz="5.55111512312578E-17 0 -2.77555756156289E-17" rpy="0 0 0" />
+      <mass value="0.000523598775598299" />
+      <inertia ixx="5.23598775598298E-09" ixy="-5.16987882845642E-26" ixz="4.13590306276514E-25" iyy="5.23598775598298E-09" iyz="5.16987882845642E-26" izz="5.23598775598298E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg4_end_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg4_end_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg4_sec1_leg4_end" type="fixed">
+    <origin xyz="-0.0271542070757799 -0.019963677867964 0.155210616284265" rpy="-1.53890591238882 0.114921448047227 -2.65500348954818" />
+    <parent link="leg4_sec2" />
+    <child link="leg4_end" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="leg5_sec0">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg5_sec0_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg5_sec0_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_leg5_sec0" type="revolute">
+    <origin xyz="0.0883345911860154 -0.0509999999999997 0" rpy="1.5707963267949 0 -2.09038192659899" />
+    <parent link="base_link" />
+    <child link="leg5_sec0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg5_sec1">
+    <inertial>
+      <origin xyz="5.71011421132694E-09 0.00533038998828729 -0.05907045947276" rpy="0 0 0" />
+      <mass value="0.0486978737702698" />
+      <inertia ixx="2.23874617536782E-05" ixy="6.82131812553126E-13" ixz="-2.93052584054011E-11" iyy="4.50321877207089E-05" iyz="1.45670538125702E-09" izz="2.33241066637153E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg5_sec1_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg5_sec1_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg5_sec0_leg5_sec1" type="revolute">
+    <origin xyz="-0.0139999999999999 -0.00249999999999021 -0.0829999999999969" rpy="0 0.0750140293482231 -1.5707963267949" />
+    <parent link="leg5_sec0" />
+    <child link="leg5_sec1" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg5_sec2">
+    <inertial>
+      <origin xyz="0.00447855748927306 0.0359302309473375 0.00431961611906123" rpy="0 0 0" />
+      <mass value="0.301282258314777" />
+      <inertia ixx="0.000839653296899393" ixy="-5.43039219271966E-07" ixz="0.000550363438528571" iyy="0.00126928985211286" iyz="-2.39708770127247E-07" izz="0.000809061532346639" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg5_sec2_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg5_sec2_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg5_sec1_leg5_sec2" type="revolute">
+    <origin xyz="0 -0.0240000000000002 -0.118000000000002" rpy="0 -0.791521153244008 0" />
+    <parent link="leg5_sec1" />
+    <child link="leg5_sec2" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1" upper="1" effort="10" velocity="10" />
+  </joint>
+  <link name="leg5_end">
+    <inertial>
+      <origin xyz="0 0 2.77555756156289E-17" rpy="0 0 0" />
+      <mass value="0.000523598775598299" />
+      <inertia ixx="5.23598775598299E-09" ixy="-3.87740912134232E-26" ixz="-4.13590306276514E-25" iyy="5.23598775598299E-09" iyz="1.93870456067116E-26" izz="5.23598775598299E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg5_end_hull.obj" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="leg5_end_hull.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="leg5_sec2_leg4_end" type="fixed">
+    <origin xyz="0.124761507746165 0.036148286668602 -0.0984937610354022" rpy="0.969665570451577 0.803297229042861 2.41148618199875" />
+    <parent link="leg5_sec2" />
+    <child link="leg5_end" />
+    <axis xyz="0 0 0" />
+  </joint>
+    <transmission name="simple_trans00">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_link_leg0_sec0">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor00">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans01">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg0_sec0_leg0_sec1">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor01">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans02">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg0_sec1_leg0_sec2">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor02">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans10">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_link_leg1_sec0">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor10">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg1_sec0_leg1_sec1">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor11">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg1_sec1_leg1_sec2">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor12">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans20">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_link_leg2_sec0">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor20">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans21">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg2_sec0_leg2_sec1">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor21">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans22">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg2_sec1_leg2_sec2">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor22">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans30">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_link_leg3_sec0">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor30">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans31">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg3_sec0_leg3_sec1">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor31">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans32">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg3_sec1_leg3_sec2">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor32">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans40">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_link_leg4_sec0">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor40">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans41">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg4_sec0_leg4_sec1">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor41">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans42">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg4_sec1_leg4_sec2">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor42">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans50">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_link_leg5_sec0">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor50">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans51">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg5_sec0_leg5_sec1">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor51">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+
+    <transmission name="simple_trans52">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg5_sec1_leg5_sec2">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="foo_motor52">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+    </transmission>
+</robot>
